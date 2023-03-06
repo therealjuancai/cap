@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester</title>
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js\codex.js"></script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="row">
+            <div class="col-8 row menu mod">
+                <div class="col-6 row diseno">
+                    <div class=" col-12 mod">
+                        <h2 class="mod titulo">Diseño</h2>
+                        <br>
+                        <button type="button" class="btn btn-outline-light" onclick="rect()">Rectangulo</button>
+                        <button type="button" class="btn btn-outline-light" onclick="cir()">Circulo</button>
+                        <div id="designbox">
+                            <div class="row mod">
+                                <form class="row g-3">
+                                <div class=" col-5 row g-3 filtro" id="rect">
+                                    <p>Placa: </p>
+                                    <div class="col-auto">
+                                    <label class="visually-hidden">Largo</label>
+                                    <input type="number" class="form-control" id="Largo" placeholder="Largo (m)">
+                                    </div>
+                                    <div class="col-auto">
+                                    <label class="visually-hidden">Ancho</label>
+                                    <input type="number" class="form-control" id="Ancho" placeholder="Ancho (m)">
+                                    </div>
+                                </div>
+                                <div class=" col-5 row g-3 filtro" id="cir">
+                                    <p>Placa: </p>
+                                    <div class="col-auto">
+                                    <label class="visually-hidden">Radio</label>
+                                    <input type="number" class="form-control" id="Radio" placeholder="Radio (m)">
+                                    </div>
+                                </div>
+                                <div class="col-5 g-3" id="sep">
+                                    <p>Separación: </p>
+                                    <div class="col-auto" id="labelsep">
+                                        <label class="visually-hidden">Distancia</label>
+                                        <input type="number" class="form-control" id="Distancia" placeholder="Distancia (m)">
+                                    </div>
+                                </div>
+                            </div>
+                            <p> <br> Dielectrico: </p>
+                            <div>
+                                <form class="d-flex" role="search">
+                                <input class="form-control me-2" id="buscador" type="search" placeholder="Material" aria-label="Material">
+                                </form>
+                            </div>
+                            <br>
+                            <div class="card" id="Aire" Style="width: 7rem;" onclick="draw(), drawCap(), calcular(mat=1.0)">
+                            <div class="card-body">
+                                <p class="card-text">Aire y gases</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=4.6)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Aceite de recino</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.7)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Aceite mineral</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=80.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Agua</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=30.0)" Style="width: 7rem;">
+                          
+                            <div class="card-body">
+                                <p class="card-text">Alcohol</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=5.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Bakelita</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=6.6)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Calán</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=6.5)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Calit</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.9)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Caucho</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=4.1)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Celuloide</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=1.8)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Cera</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=50.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Codensa</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=7.6)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Cristal</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=4.5)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Cuarzo</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.8)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Ebonita</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=9.9)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Flint</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=3.1)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Goma laca</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.5)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Ipertrolitul</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=8.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Marmol</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=8.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Mica</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=8.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Micalex</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=3.7)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Papel</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.1)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Parafina</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=6.8)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Porcelana</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.5)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Resina</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=2.2)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Vaselina</p>
+                            </div>
+                            </div>
+                            <div class="card" onclick="draw(), drawCap(), calcular(mat=10.0)" Style="width: 7rem;">
+                            
+                            <div class="card-body">
+                                <p class="card-text">Vidrio</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-6 mod" >
+                    <div class="titulo" id="info">
+                        <h2 class="mod">Información</h2>
+                    </div>
+                    <div id="resul">
+                        <div class="infobox">
+                            <p >ε0 =  8.854187817e-12 F/m</p>
+                        </div>
+                        <div class="infobox">
+                            <p id="area">Area(A) = 0.0 m^2</p>
+                        </div>
+                        <div class="infobox">
+                            <p id="separacion" class="cuadrado">Separación(d) = 0.0 m</p>
+                        </div>
+                        <div class="infobox">
+                            <p id="permitividad" class="cuadrado">Permitividad del Material(k) = 0.0</p>
+                        </div>
+                        <div class="infobox">
+                            <p>(k*ε0*A)/d</p>
+                        </div>
+                        <div class="infobox">
+                            <p id="capacitancia">Capacitancia = 0.0 F</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mod">
+                <h2 class="mod titulo" id="capacitor">Capacitor</h2>
+                <canvas class="cuadro" id="dibujo" width="300" height="300" style="border: 1px solid rgba(255, 255, 255, 0.589)">
+                </canvas>
+                <canvas class ="cuadro" id="cap" width="300" height="300" style="border: 1px solid rgba(255, 255, 255, 0.589)">
+                </canvas>
+                <button type="button" class="btn btn-outline-danger" id="malvado" onclick="limp()">   Limpiar   </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
